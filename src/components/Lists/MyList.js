@@ -1,5 +1,5 @@
 import { memo } from "react"
-
+import  { isEqual } from 'lodash'
 const Li = memo(({ fullname }) => {
   console.log(`renderizando ${fullname}`)
   return (
@@ -7,8 +7,7 @@ const Li = memo(({ fullname }) => {
       {fullname}
     </li>
   )
-}
-)
+}, isEqual)
 
 const MyList = ({ data }) => {
   console.log('renderizando lista')
